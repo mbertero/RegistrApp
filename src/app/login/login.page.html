@@ -1,44 +1,48 @@
 <app-header></app-header>
-<ion-content class="ion-padding">
+<ion-content [fullscreen]="true">
 
   <form [formGroup]="formIngresarUsuario">
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input class="input"
+           
+            id="nombre"
+            formControlName="nombre"
+            placeholder="Ingrese nombre de usuario"
+            type="text"
+            label-placement="floating"
+            fill="outline"
+          ></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
 
-        <ion-input
-          label="Nombre de usuario: "
-          id="nombre"
-          formControlName="nombre"
-          placeholder="Ingrese nombre de usuario"
-          type="text"
-          label-placement="floating"
-          fill="outline"
-        ></ion-input>
-        <br>
-
-        <ion-input
-          label="Contraseña: "
-          formControlName="password"
-          placeholder="Ingrese Contraseña"
-          type="password"
-          label-placement="floating"
-          fill="outline"
-        ></ion-input>
-        <br>
-
-
-      <ion-button
-        color="primary"
-        (click)="ingresarUsuario()"
-        type="submit"
-      >INGRESAR</ion-button>
-      <ion-button
-        color="secondary"
-        (click)="irARecuperar()"
-      >RECUPERAR</ion-button>
-
+    <ion-item>
+    <ion-input class="input"
+      
+      formControlName="password"
+      placeholder="Ingrese Contraseña"
+      type="password"
+      label-placement="floating"
+      fill="outline"
+    ></ion-input>
+    <ion-icon name="lock-closed-outline"></ion-icon>
+  </ion-item>
+    <br />
+    <div class="button-container">
+    <ion-button color="primary" (click)="ingresarUsuario()" type="submit"
+      >INGRESAR</ion-button
+    >
+    <ion-button color="secondary" (click)="irARecuperar()"
+      >RECUPERAR</ion-button
+    >
+  </div>
+  </div>
   </form>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-title class="ion-text-center">Desarrollo de Aplicaciones Móviles</ion-title>
+    <ion-title class="ion-text-center"
+      >Desarrollo de Aplicaciones Móviles</ion-title
+    >
   </ion-toolbar>
 </ion-footer>

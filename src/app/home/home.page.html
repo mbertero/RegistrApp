@@ -1,8 +1,7 @@
 <app-header></app-header>
 
-<h1></h1>
 
-<ion-card >
+<ion-content><ion-card >
   <img class="centered-image"alt="Duoc" src="https://somos.duoc.cl/wp-content/uploads/2021/06/plaza-oeste-copy.jpg" />
   <ion-card-header>
     <ion-card-title class="ion-text-center">Profesores</ion-card-title>
@@ -14,19 +13,8 @@
   </ion-card-content>
 </ion-card>
 
-<!-- <div>
-<ion-card *ngFor="let profesor of profesores?.users">
-  <ion-card-header>
-    <ion-card-title>{{profesor?.firstName}}</ion-card-title>
-    <ion-button
-      color="success"
-      (click)="detalle(profesor)"
-    >Ver</ion-button>
-  </ion-card-header>
-</ion-card>
-</div> -->
 
-<div class="glass-content">
+<div class="">
   <ion-row>
     <ion-col *ngFor="let profesor of profesores?.users" size-lg="6" size-md="6" size-sm="12" size="12">
       <ion-card>
@@ -42,6 +30,9 @@
             </ion-col>
           </ion-row>
         </ion-grid>
+        <!-- <ion-infinite-scroll threshold="25%"position="botton"{ionInfinite}="detalle($event)">
+          <ion-infinite-scroll-content ></ion-infinite-scroll-content>
+        </ion-infinite-scroll> -->
       </ion-card>
     </ion-col>
   </ion-row>
@@ -53,3 +44,4 @@
       <ion-title class="ion-text-center">Desarrollo de Aplicaciones Móviles</ion-title>
     </ion-toolbar>
   </ion-footer>
+</ion-content>

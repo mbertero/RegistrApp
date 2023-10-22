@@ -27,6 +27,11 @@ const routes: Routes = [
     path: 'recupera-pass',
     loadChildren: () => import('./recupera-pass/recupera-pass.module').then( m => m.RecuperaPassPageModule)
   },
+  {
+    path: 'perfil/:id',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule),
+    canActivate: [CanActivateRouteGuard]
+  },
 ];
 
 @NgModule({

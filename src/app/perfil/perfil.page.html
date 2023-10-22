@@ -1,0 +1,23 @@
+<app-header></app-header>
+<ion-content>
+  <!-- <ion-card-content class="ion-align-items-center ion-justify-content-center">
+    
+  </ion-card-content> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="4" offsetMd="4">
+        <div *ngIf="profesor">
+          <ion-card class="centered-card">
+            <img src="{{profesor?.image}}" class="centered-image"><br>
+            <ion-card-title class="ion-text-center">{{profesor?.firstName}} {{profesor?.lastName}}</ion-card-title>
+            <p>Edad:               {{profesor?.age}}</p>
+            <p>Correo Electronico: {{profesor?.email}}</p>
+            <p>Titulo:             {{profesor?.title}}</p>
+            <p>Cumpleaños:         {{profesor?.birthDate}}</p>
+         
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

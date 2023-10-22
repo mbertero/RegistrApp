@@ -1,13 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>recupera-pass</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">recupera-pass</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <!--Formulario reactivo-->
+  <form [formGroup]="formularioRecuperacion">
+
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input class="input"
+           
+            id="nombre"
+            formControlName="nombre"
+            placeholder="Ingrese nombre de usuario"
+            type="text"
+            label-placement="floating"
+            fill="outline"
+          ></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+
+   
+    <br />
+
+    <ion-button color="secondary" (click)="irARecuperar()"
+      >RECUPERAR</ion-button    >
+  </div>
+  
+
+
+  </form>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Desarrollo de Aplicaciones Móviles</ion-title>
+  </ion-toolbar>
+</ion-footer>

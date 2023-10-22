@@ -36,3 +36,13 @@ ion-avatar{
   font-size: 1.5rem;
   font-weight: bold;
 }
+
+.custom-card {
+  max-width: 200px; /* Ajusta el ancho máximo según tus preferencias */
+  margin: 10px; /* Espacio entre las tarjetas */
+}
+
+.custom-card img {
+  max-width: 100%; /* Hace que las imágenes se ajusten al ancho de la tarjeta */
+  height: auto; /* Mantiene la relación de aspecto de las imágenes */
+}

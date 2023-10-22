@@ -17,6 +17,16 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'profesores',
+    loadChildren: () => import('./profesores/profesores.module').then( m => m.ProfesoresPageModule),
+    canActivate: [CanActivateRouteGuard]
+   
+  },
+  {
+    path: 'recupera-pass',
+    loadChildren: () => import('./recupera-pass/recupera-pass.module').then( m => m.RecuperaPassPageModule)
+  },
 ];
 
 @NgModule({

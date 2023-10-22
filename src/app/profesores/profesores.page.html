@@ -1,0 +1,34 @@
+<app-header></app-header>
+<ion-content>
+  
+<div class="">
+  <ion-row>
+    <ion-col *ngFor="let profesor of profesores?.users" size-lg="6" size-md="6" size-sm="12" size="12">
+      <ion-card>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="ion-padding" size-lg="4" size-md="4" size-sm="4" size="12">
+              <ion-avatar><img src="{{profesor?.image}}" alt=""></ion-avatar>
+            </ion-col>
+            <ion-col class="ion-padding" size-lg="8" size-md="8" size-sm="8" size="12">
+              <div class="name">{{profesor?.firstName}} {{profesor?.lastName}}</div>
+        
+              <p>Correo:<br><strong>{{profesor?.email}}</strong> </p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- <ion-infinite-scroll threshold="25%"position="botton"{ionInfinite}="detalle($event)">
+          <ion-infinite-scroll-content ></ion-infinite-scroll-content>
+        </ion-infinite-scroll> -->
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</div>
+<ion-footer>
+
+    <ion-toolbar>
+      <ion-title class="ion-text-center">Desarrollo de Aplicaciones Móviles</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

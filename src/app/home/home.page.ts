@@ -15,18 +15,26 @@ export class HomePage implements OnInit{
   constructor(private profesoresService: ProfesoresService, private router: Router) {}
 
   ngOnInit() {
-    this.profesoresService.getProfesores().subscribe((data) => {
-      // Persistencia
-      localStorage.setItem('profesores', JSON.stringify(data));
-      console.log(data);
-      this.profesores = data;
-    });
+   
+   
 
   }
-
-  detalle(profesor:any){
-    console.log('profesor: ', profesor);
-    this.router.navigateByUrl('/detalle');
+  irAAsistencia() {
+    
+    alert('Aun no se encuentra disponible. Vaya a botón de profesor :D');
   }
 
+
+  irAProfesor() {
+    
+    this.router.navigate(['profesores']);
+  }
+  irAInforme() {
+    
+    alert('Aun no se encuentra disponible. Vaya a botón de profesor :D');
+  }
+  irAAjustes() {
+    
+    alert('Aun no se encuentra disponible. Vaya a botón de profesor :D');
+  }
 }

@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class StateService {
 
   //BehaviorSubject es un tipo de observable que nos permite almacenar un valor y emitirlo a todos los componentes que estén suscritos a él.
-  titulo: BehaviorSubject<string> = new BehaviorSubject<string>('Homepage');
+  titulo: BehaviorSubject<string> = new BehaviorSubject<string>('Login');
   nombre: BehaviorSubject<string> = new BehaviorSubject<string>('invitado');
 
   constructor() { }

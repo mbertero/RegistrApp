@@ -1,5 +1,9 @@
 <ion-header class="header">
   <ion-toolbar>
+    <ion-buttons slot="start"*ngIf="esVisible">
+      <ion-back-button defaultHref="/home"  >
+      </ion-back-button>
+    </ion-buttons>
     <ion-title>{{titulo}}</ion-title>
     <ion-card-subtitle>Bienvenido: {{nombre}}</ion-card-subtitle>
     <!-- Se agrega un ngIf para validar si el usuario esta logueado , el boton sera visible -->

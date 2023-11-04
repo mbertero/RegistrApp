@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfesoresService } from '../state/profesores.service';
 import { Router } from '@angular/router';
+import { StateService } from '../state/state.service';
 
 
 
@@ -12,7 +13,8 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit{
   public profesores: any;
 
-  constructor(private profesoresService: ProfesoresService, private router: Router) {}
+  constructor(private profesoresService: ProfesoresService, private router: Router,
+    private stateService : StateService) {}
 
   ngOnInit() {
    
@@ -28,6 +30,7 @@ export class HomePage implements OnInit{
   irAProfesor() {
     
     this.router.navigate(['profesores']);
+    this.stateService.setTitulo = 'Profesores'
   }
   irAInforme() {
     
@@ -37,4 +40,5 @@ export class HomePage implements OnInit{
     
     alert('Aun no se encuentra disponible. Vaya a botón de profesor :D');
   }
+  
 }

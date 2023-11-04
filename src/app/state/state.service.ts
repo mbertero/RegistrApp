@@ -16,6 +16,7 @@ export class StateService {
   //GETTERS Y SETTERS
   get getTitulo(){
     return this.titulo.asObservable();
+    
   }
 
   get getNombre(){
@@ -24,6 +25,7 @@ export class StateService {
 
   set setTitulo(titulo:string){
     this.titulo.next(titulo);
+    console.log(titulo)
   }
 
   set setNombre(nombre:string){

@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProfesoresService {
-  getProfesor(perfilId: any) {
+
+    getProfesor(perfilId: any) {
     throw new Error('Metodo ni implementado');
   }
 
@@ -16,6 +17,7 @@ export class ProfesoresService {
 
   getProfesores(){
     return this.http.get(`${this.BASE_URL}/users`)
+  
   }
   getProfesorId(profesorId: string): Observable<any> {
     return this.http.get(`${this.BASE_URL}/users/${profesorId}`);

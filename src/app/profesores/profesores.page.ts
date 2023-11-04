@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfesoresService } from '../state/profesores.service';
 import { Router } from '@angular/router';
+import { StateService } from '../state/state.service';
 
 @Component({
   selector: 'app-profesores',
@@ -10,19 +11,21 @@ import { Router } from '@angular/router';
 export class ProfesoresPage implements OnInit {
   public profesores: any;
 
-  constructor(private profesoresService: ProfesoresService, private router: Router) {}
+  constructor(private profesoresService: ProfesoresService, private stateService : StateService ,private router: Router) {}
 
 
   ngOnInit() {
     this.profesoresService.getProfesores().subscribe((data) => {
       console.log(data);
       this.profesores = data;
+      
     });
   }
 
   detalle(profesor:any){
     console.log('profesor: ', profesor);
     this.router.navigateByUrl('/detalle');
+    this.stateService.setTitulo = 'Descripción'
   }
 
 

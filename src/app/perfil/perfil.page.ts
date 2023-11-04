@@ -23,6 +23,7 @@ export class PerfilPage implements OnInit {
     this.perfilId = this.activateRoute.snapshot.paramMap.get('id');
     this.profesoresService.getProfesorId(this.perfilId).subscribe((detalle) => {
       this.profesor = detalle;
+      
     });
   }
 }

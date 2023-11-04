@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../state/state.service';
 import { LoginService } from '../login/login.service';
+import { ProfesoresService } from '../state/profesores.service';
+
 
 @Component({
   selector: 'app-header',
@@ -11,8 +13,10 @@ export class HeaderComponent implements OnInit {
   titulo: string = '';
   nombre: string = '';
   isLogged: boolean = false;
+  esVisible : boolean = false;
 
-  constructor(private stateService: StateService, private loginService: LoginService) {}
+  constructor(private stateService: StateService,
+     private loginService: LoginService  ){}
 
   ngOnInit() {
     this.stateService.getTitulo.subscribe((titulo) => {
@@ -23,9 +27,21 @@ export class HeaderComponent implements OnInit {
       this.nombre = nombre;
     });
 
-    // Suscribe al estado de inicio de sesión
+  
     this.loginService.isLogged$.subscribe((isLogged: boolean) => {
       this.isLogged = isLogged;
     });
+
+    this.stateService.getTitulo.subscribe((titulo) => {
+      if (titulo == 'Profesores' ) {
+        this.esVisible = true;
+      } else {
+        this.esVisible = false;
+      }
+    });
+
+
+
+
   }
 }

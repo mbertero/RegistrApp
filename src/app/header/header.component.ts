@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { StateService } from '../state/state.service';
 import { LoginService } from '../login/login.service';
 import { ProfesoresService } from '../state/profesores.service';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 
 @Component({
@@ -16,7 +18,10 @@ export class HeaderComponent implements OnInit {
   esVisible : boolean = false;
 
   constructor(private stateService: StateService,
-     private loginService: LoginService  ){}
+     private loginService: LoginService, 
+     private router: Router ){
+   
+     }
 
   ngOnInit() {
     this.stateService.getTitulo.subscribe((titulo) => {
@@ -40,8 +45,6 @@ export class HeaderComponent implements OnInit {
       }
     });
 
-
-
-
   }
+
 }

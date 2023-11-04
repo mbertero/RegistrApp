@@ -12,14 +12,12 @@ export class ProfesoresPage implements OnInit {
 
   constructor(private profesoresService: ProfesoresService, private router: Router) {}
 
+
   ngOnInit() {
     this.profesoresService.getProfesores().subscribe((data) => {
-      // Persistencia
-      localStorage.setItem('profesores', JSON.stringify(data));
       console.log(data);
       this.profesores = data;
     });
-
   }
 
   detalle(profesor:any){

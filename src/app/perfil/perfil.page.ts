@@ -20,12 +20,9 @@ export class PerfilPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log();
     this.perfilId = this.activateRoute.snapshot.paramMap.get('id');
-    this.http
-      .get('https://dummyjson.com/users/' + this.perfilId)
-      .subscribe((detalle) => {
-        this.profesor = detalle;
-      });
+    this.profesoresService.getProfesorId(this.perfilId).subscribe((detalle) => {
+      this.profesor = detalle;
+    });
   }
 }

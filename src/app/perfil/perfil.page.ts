@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProfesoresService } from '../state/profesores.service';
+import { StateService } from '../state/state.service';
 
 @Component({
   selector: 'app-perfil',
@@ -16,14 +17,17 @@ export class PerfilPage implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private profesoresService: ProfesoresService,
+    private stateService : StateService,
     private http: HttpClient
   ) {}
 
   ngOnInit() {
+    this.stateService.setTitulo = 'Descripción'
+   
     this.perfilId = this.activateRoute.snapshot.paramMap.get('id');
     this.profesoresService.getProfesorId(this.perfilId).subscribe((detalle) => {
       this.profesor = detalle;
-      
+
     });
   }
 }

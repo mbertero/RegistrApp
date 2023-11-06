@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
-    data: { title: 'Home' },
+    data: { titulo: 'Home' },
     canActivate: [CanActivateRouteGuard]
   },
   {
@@ -17,12 +17,12 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
-    data: { title: 'Login' }
+    data: { titulo: 'Login' }
   },
   {
     path: 'profesores',
     loadChildren: () => import('./profesores/profesores.module').then( m => m.ProfesoresPageModule),
-    data: { title: 'Profesores' },
+    data: { titulo: 'Profesores' },
     canActivate: [CanActivateRouteGuard]
    
   },
@@ -33,7 +33,7 @@ const routes: Routes = [
   {
     path: 'perfil/:id',
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule),
-    data: { title: 'Perfil' },
+    data: { titulo: 'Perfil' },
     canActivate: [CanActivateRouteGuard]
   },
 ];

@@ -20,12 +20,12 @@ export class ProfesoresPage implements OnInit {
       this.profesores = data;
       
     });
+
   }
 
   detalle(profesor:any){
     console.log('profesor: ', profesor);
-    this.router.navigateByUrl('/detalle');
-    this.stateService.setTitulo = 'Descripción'
+    // this.router.navigateByUrl('/detalle');
   }
 
 

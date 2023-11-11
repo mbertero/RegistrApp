@@ -17,10 +17,9 @@ export class HomePage implements OnInit{
     private stateService : StateService) {}
 
   ngOnInit() {
-   
-   
+    this.stateService.setTitulo = 'Home'
 
-  }
+    }
   irAAsistencia() {
     
     alert('Aun no se encuentra disponible. Vaya a botón de profesor :D');
@@ -30,7 +29,6 @@ export class HomePage implements OnInit{
   irAProfesor() {
     
     this.router.navigate(['profesores']);
-    this.stateService.setTitulo = 'Profesores'
   }
   irAInforme() {
     

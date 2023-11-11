@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HeaderModule } from '../header/header.module';
 import { ProfesoresService } from '../state/profesores.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { StateService } from '../state/state.service';
 
 
 @NgModule({
@@ -20,6 +21,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   declarations: [HomePage],
-  providers: [ProfesoresService]
+  providers: [ProfesoresService, StateService]
 })
 export class HomePageModule {}

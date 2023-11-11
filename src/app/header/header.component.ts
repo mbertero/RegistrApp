@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../state/state.service';
 import { LoginService } from '../login/login.service';
-import { ProfesoresService } from '../state/profesores.service';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import {  Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -42,7 +41,7 @@ export class HeaderComponent implements OnInit {
     });
   }
   irCerrar() {
-    this.stateService.setTitulo = 'Login';
+    // this.stateService.setTitulo = 'Login';
     this.router.navigate(['/login']);
   }
 

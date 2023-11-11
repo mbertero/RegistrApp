@@ -72,7 +72,7 @@ export class LoginPage implements OnInit {
 
     const nombre = usuario.nombre;
 
-    this.stateService.setTitulo = 'Homepage'
+
     this.stateService.setNombre = nombre;
     this.router.navigate(['home']);
 

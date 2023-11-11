@@ -15,6 +15,8 @@ export class ProfesoresPage implements OnInit {
 
 
   ngOnInit() {
+    this.stateService.setTitulo = 'Profesores'
+
     this.profesoresService.getProfesores().subscribe((data) => {
       console.log(data);
       this.profesores = data;

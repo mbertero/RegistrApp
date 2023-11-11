@@ -8,6 +8,8 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { HeaderModule } from '../header/header.module';
+import { ProfesoresService } from '../state/profesores.service';
+import { StateService } from '../state/state.service';
 
 @NgModule({
   imports: [
@@ -18,6 +20,7 @@ import { HeaderModule } from '../header/header.module';
     ReactiveFormsModule,
     HeaderModule
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage],
+  providers: [ProfesoresService, StateService]
 })
 export class LoginPageModule {}

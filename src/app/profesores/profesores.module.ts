@@ -10,6 +10,7 @@ import { ProfesoresPage } from './profesores.page';
 import { HeaderModule } from '../header/header.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfesoresService } from '../state/profesores.service';
+import { StateService } from '../state/state.service';
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { ProfesoresService } from '../state/profesores.service';
     
   ],
   declarations: [ProfesoresPage],
-  providers: [ProfesoresService]
+  providers: [ProfesoresService, StateService]
 })
 export class ProfesoresPageModule {}

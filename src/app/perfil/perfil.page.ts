@@ -17,13 +17,11 @@ export class PerfilPage implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private profesoresService: ProfesoresService,
-    private stateService : StateService,
-    private http: HttpClient
+    private stateService : StateService
   ) {}
 
   ngOnInit() {
     this.stateService.setTitulo = 'Descripción'
-   
     this.perfilId = this.activateRoute.snapshot.paramMap.get('id');
     this.profesoresService.getProfesorId(this.perfilId).subscribe((detalle) => {
       this.profesor = detalle;

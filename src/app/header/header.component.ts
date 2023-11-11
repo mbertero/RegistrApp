@@ -22,22 +22,21 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.stateService.getTitulo.subscribe((titulo) => {
       this.titulo = titulo;
-    });
-
-    this.stateService.getNombre.subscribe((nombre) => {
-      this.nombre = nombre;
-    });
-
-    this.loginService.isLogged$.subscribe((isLogged: boolean) => {
-      this.isLogged = isLogged;
-    });
-
-    this.stateService.getTitulo.subscribe((titulo) => {
-      if (titulo == 'Profesores' || titulo== 'Descripción' ) {
+  
+      if (titulo == 'Profesores' || titulo == 'Descripción') {
         this.esVisible = true;
       } else {
         this.esVisible = false;
       }
+    });
+  
+    this.stateService.getNombre.subscribe((nombre) => {
+      this.nombre = nombre;
+      console.log(nombre);
+    });
+  
+    this.loginService.isLogged$.subscribe((isLogged: boolean) => {
+      this.isLogged = isLogged;
     });
   }
   irCerrar() {
@@ -46,13 +45,7 @@ export class HeaderComponent implements OnInit {
   }
 
   retroceder(){
-    // this.stateService.getTitulo.subscribe((titulo) => {
-    //   if (titulo == 'Descripción' ) {
-    //     this.stateService.setTitulo = 'Profesores'
-    //   } else if (titulo == 'Profesores'){
-    //     this.stateService.setTitulo = 'Homepage'
-    //   }
-    // });
+   
   }
 
 

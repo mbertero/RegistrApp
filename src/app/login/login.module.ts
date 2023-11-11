@@ -10,6 +10,8 @@ import { LoginPage } from './login.page';
 import { HeaderModule } from '../header/header.module';
 import { ProfesoresService } from '../state/profesores.service';
 import { StateService } from '../state/state.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   imports: [
@@ -18,9 +20,9 @@ import { StateService } from '../state/state.service';
     IonicModule,
     LoginPageRoutingModule,
     ReactiveFormsModule,
-    HeaderModule
+    HeaderModule,
+    HttpClientModule
   ],
-  declarations: [LoginPage],
-  providers: [ProfesoresService, StateService]
+  declarations: [LoginPage]
 })
 export class LoginPageModule {}

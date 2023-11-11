@@ -8,7 +8,7 @@ import { PerfilPageRoutingModule } from './perfil-routing.module';
 
 import { PerfilPage } from './perfil.page';
 import { HeaderModule } from '../header/header.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule } from '@angular/common/http';
 import { ProfesoresService } from '../state/profesores.service';
 import { StateService } from '../state/state.service';
 
@@ -22,6 +22,6 @@ import { StateService } from '../state/state.service';
     HttpClientModule
   ],
   declarations: [PerfilPage],
-  providers: [ProfesoresService, StateService]
+  providers: [ ProfesoresService]
 })
 export class PerfilPageModule {}

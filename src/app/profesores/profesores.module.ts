@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfesoresService } from '../state/profesores.service';
 import { StateService } from '../state/state.service';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -23,6 +24,6 @@ import { StateService } from '../state/state.service';
     
   ],
   declarations: [ProfesoresPage],
-  providers: [ProfesoresService, StateService]
+  providers: [ProfesoresService]
 })
 export class ProfesoresPageModule {}

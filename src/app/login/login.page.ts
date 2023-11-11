@@ -44,6 +44,7 @@ export class LoginPage implements OnInit {
    }
 
   ngOnInit() {
+     
   }
 
   ingresarUsuario(){
@@ -55,7 +56,7 @@ export class LoginPage implements OnInit {
     //Éste if es para que no se pueda ingresar a la página de home sin haber iniciado sesión
     if(usuario.nombre === this.usuario1.nombre && usuario.password === this.usuario1.password){
       this.loginService.setIsLogged(true);
-      this.router.navigate(['home']);
+      this.router.navigate(['Home']);
     } else {
       alert('Usuario o contraseña incorrecto, vuelve a intentarlo');
     }
@@ -71,10 +72,9 @@ export class LoginPage implements OnInit {
     }
 
     const nombre = usuario.nombre;
-
-
     this.stateService.setNombre = nombre;
     this.router.navigate(['home']);
+    console.log('Entre a login correctamente')
 
   }
 

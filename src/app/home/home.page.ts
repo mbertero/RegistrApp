@@ -12,12 +12,15 @@ import { StateService } from '../state/state.service';
 })
 export class HomePage implements OnInit{
   public profesores: any;
+  nombre: string = '';
 
-  constructor(private profesoresService: ProfesoresService, private router: Router,
+  constructor( private router: Router,
     private stateService : StateService) {}
 
   ngOnInit() {
     this.stateService.setTitulo = 'Home'
+    console.log('Entre a home correctamente')
+    
 
     }
   irAAsistencia() {

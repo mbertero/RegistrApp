@@ -7,8 +7,9 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HeaderModule } from '../header/header.module';
 import { ProfesoresService } from '../state/profesores.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule } from '@angular/common/http';
 import { StateService } from '../state/state.service';
+import { LoginService } from '../login/login.service';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { StateService } from '../state/state.service';
     HeaderModule,
     HttpClientModule
   ],
-  declarations: [HomePage],
-  providers: [ProfesoresService, StateService]
+  declarations: [HomePage]
+
 })
 export class HomePageModule {}

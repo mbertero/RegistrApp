@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfesoresService } from '../state/profesores.service';
-import { Router } from '@angular/router';
+
 import { StateService } from '../state/state.service';
 
 @Component({
@@ -11,7 +11,8 @@ import { StateService } from '../state/state.service';
 export class ProfesoresPage implements OnInit {
   public profesores: any;
 
-  constructor(private profesoresService: ProfesoresService, private stateService : StateService ,private router: Router) {}
+  constructor(private profesoresService: ProfesoresService,
+     private stateService : StateService ) {}
 
 
   ngOnInit() {

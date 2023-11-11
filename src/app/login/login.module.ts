@@ -20,8 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule,
     LoginPageRoutingModule,
     ReactiveFormsModule,
-    HeaderModule,
-    HttpClientModule
+    HeaderModule
   ],
   declarations: [LoginPage]
 })

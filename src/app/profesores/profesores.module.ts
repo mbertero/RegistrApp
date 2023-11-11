@@ -14,6 +14,8 @@ import { StateService } from '../state/state.service';
 
 
 @NgModule({
+  declarations: [ProfesoresPage],
+  providers: [ProfesoresService],
   imports: [
     CommonModule,
     FormsModule,
@@ -22,8 +24,7 @@ import { StateService } from '../state/state.service';
     HttpClientModule,
     ProfesoresPageRoutingModule,
     
-  ],
-  declarations: [ProfesoresPage],
-  providers: [ProfesoresService]
+  ]
+
 })
 export class ProfesoresPageModule {}

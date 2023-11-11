@@ -21,7 +21,8 @@ import { LoginService } from '../login/login.service';
     HeaderModule,
     HttpClientModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  providers: [StateService]
 
 })
 export class HomePageModule {}

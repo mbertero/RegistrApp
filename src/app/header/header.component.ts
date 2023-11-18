@@ -22,17 +22,20 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.stateService.getTitulo.subscribe((titulo) => {
       this.titulo = titulo;
+      console.log('Header' + titulo)
+ 
   
       if (titulo == 'Profesores' || titulo == 'Descripción') {
         this.esVisible = true;
       } else {
         this.esVisible = false;
       }
+     
     });
   
     this.stateService.getNombre.subscribe((nombre) => {
       this.nombre = nombre;
-      console.log(nombre);
+      console.log('Header'+ nombre);
     });
   
     this.loginService.isLogged$.subscribe((isLogged: boolean) => {

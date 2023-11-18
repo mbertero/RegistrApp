@@ -20,7 +20,7 @@ export class HomePage implements OnInit{
   ngOnInit() {
     this.stateService.setTitulo = 'Home'
     console.log('Entre a home correctamente')
-    
+
 
     }
   irAAsistencia() {
@@ -29,8 +29,7 @@ export class HomePage implements OnInit{
   }
 
 
-  irAProfesor() {
-    
+  irAProfesor() {    
     this.router.navigate(['profesores']);
   }
   irAInforme() {

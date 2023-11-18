@@ -9,6 +9,7 @@ import { StateService } from '../state/state.service';
 
 @NgModule({
   declarations: [HeaderComponent],
+  providers: [StateService],
 
   imports: [
     CommonModule,

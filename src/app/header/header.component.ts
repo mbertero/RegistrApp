@@ -20,28 +20,13 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.stateService.getTitulo.subscribe((titulo) => {
-      this.titulo = titulo;
-  
-      if (titulo == 'Profesores' || titulo == 'Descripción') {
-        this.esVisible = true;
-      } else {
-        this.esVisible = false;
-      }
-    });
-  
-    this.stateService.getNombre.subscribe((nombre) => {
-      this.nombre = nombre;
-      console.log(nombre);
-    });
-  
-    this.loginService.isLogged$.subscribe((isLogged: boolean) => {
-      this.isLogged = isLogged;
-    });
+    this.stateService.titulo$.subscribe(titulo => this.titulo = titulo);
+    this.stateService.nombre$.subscribe(nombre => this.nombre = nombre);
+    this.loginService.isLogged$.subscribe(isLogged => this.isLogged = isLogged);
   }
+
+
   irCerrar() {
-    // this.stateService.setTitulo = 'Login';
-    this.router.navigate(['/login']);
   }
 
   retroceder(){

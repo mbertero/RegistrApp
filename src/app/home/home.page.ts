@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfesoresService } from '../state/profesores.service';
 import { Router } from '@angular/router';
 import { StateService } from '../state/state.service';
 
@@ -12,17 +11,21 @@ import { StateService } from '../state/state.service';
 })
 export class HomePage implements OnInit{
   public profesores: any;
-  nombre: string = '';
+  public nombre: string = '';
 
-  constructor( private router: Router,
-    private stateService : StateService) {}
+  constructor(
+    private router: Router,
+    private stateService : StateService
+    ) {}
 
   ngOnInit() {
-    this.stateService.setTitulo = 'Home'
-    console.log('Entre a home correctamente')
-    
-
+    this.stateService.setTitulo('Home');
+    this.stateService.getNombre().subscribe(nombre => {
+      this.nombre = nombre;
+    });
     }
+
+
   irAAsistencia() {
     
     alert('Aun no se encuentra disponible. Vaya a botón de profesor :D');

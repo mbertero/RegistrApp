@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProfesoresService } from '../state/profesores.service';
@@ -21,7 +20,7 @@ export class PerfilPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.stateService.setTitulo = 'Descripción'
+    this.stateService.setTitulo('Descripción')
     this.perfilId = this.activateRoute.snapshot.paramMap.get('id');
     this.profesoresService.getProfesorId(this.perfilId).subscribe((detalle) => {
       this.profesor = detalle;

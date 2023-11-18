@@ -10,7 +10,6 @@ import { ProfesoresPage } from './profesores.page';
 import { HeaderModule } from '../header/header.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfesoresService } from '../state/profesores.service';
-import { StateService } from '../state/state.service';
 
 
 @NgModule({
@@ -22,8 +21,7 @@ import { StateService } from '../state/state.service';
     IonicModule,
     HeaderModule,
     HttpClientModule,
-    ProfesoresPageRoutingModule,
-    
+    ProfesoresPageRoutingModule,  
   ]
 
 })

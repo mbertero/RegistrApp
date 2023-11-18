@@ -6,13 +6,13 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { HeaderModule } from '../header/header.module';
-import { ProfesoresService } from '../state/profesores.service';
 import {  HttpClientModule } from '@angular/common/http';
 import { StateService } from '../state/state.service';
-import { LoginService } from '../login/login.service';
 
 
 @NgModule({
+  declarations: [HomePage],
+  providers: [StateService],
   imports: [
     CommonModule,
     FormsModule,
@@ -21,8 +21,7 @@ import { LoginService } from '../login/login.service';
     HeaderModule,
     HttpClientModule
   ],
-  declarations: [HomePage],
-  providers: [StateService]
+  
 
 })
 export class HomePageModule {}

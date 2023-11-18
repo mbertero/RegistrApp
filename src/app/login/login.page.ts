@@ -17,7 +17,7 @@ interface Usuario {
 export class LoginPage implements OnInit {
 
   formIngresarUsuario: FormGroup; //Declarando formulario reactivo
-  nombre:string = '';
+  nombre:string = ''; //Declarando variable nombre
 
   usuario1: Usuario = {
     nombre: 'Jose',
@@ -44,47 +44,36 @@ export class LoginPage implements OnInit {
    }
 
   ngOnInit() {
-     
   }
 
-  ingresarUsuario(){
-    const usuario = {
-      nombre: this.formIngresarUsuario.get('nombre')?.value,
-      password: this.formIngresarUsuario.get('password')?.value
-    };
-
-    //Éste if es para que no se pueda ingresar a la página de home sin haber iniciado sesión
-    if(usuario.nombre === this.usuario1.nombre && usuario.password === this.usuario1.password){
+  ingresarUsuario() {
+    const usuario = this.formIngresarUsuario.value;
+  
+    if (usuario.nombre === '' || usuario.password === '') {
+      alert('Debes llenar todos los campos');
+      return;
+    }
+  
+    // Verifica si el usuario y la contraseña son correctos
+    if (usuario.nombre === this.usuario1.nombre && usuario.password === this.usuario1.password) {
+      // Usuario válido, inicia sesión
       this.loginService.setIsLogged(true);
-      this.router.navigate(['Home']);
+      this.stateService.setNombre(usuario.nombre);
+      
+      this.router.navigate(['home']);
     } else {
+      // Usuario no válido, muestra mensaje de error
       alert('Usuario o contraseña incorrecto, vuelve a intentarlo');
     }
-
-    if(usuario.nombre === '' || usuario.password === ''){
-      alert('Debes llenar todos los campos')
-      return;
-    }
-
-    if(usuario.nombre != this.usuario1.nombre ||usuario.password != this.usuario1.password){
-      alert('Usuario o contraseña incorrecto, vuelve a intentarlo');
-      return;
-    }
-
-    const nombre = usuario.nombre;
-    this.stateService.setNombre = nombre;
-    this.router.navigate(['home']);
-    console.log('Entre a login correctamente')
-
   }
+  
 
   irARecuperar() {
-    this.stateService.setNombre = 'invitado'
-    this.stateService.setTitulo = 'Recuperar contraseña'
+    this.stateService.setNombre('invitado')
+    this.stateService.setTitulo('Recuperar contraseña')
     this.router.navigate(['recupera-pass']);
   }
 
   recuperarUsuario(){
-
   }
 }

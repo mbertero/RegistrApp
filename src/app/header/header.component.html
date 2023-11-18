@@ -1,14 +1,6 @@
 <ion-header class="header">
   <ion-toolbar>
-    <ion-buttons slot="start"*ngIf="esVisible" >
-      <ion-back-button defaultHref="/home"  (click)="retroceder()">
-      </ion-back-button>
-    </ion-buttons>
     <ion-title>{{titulo}}</ion-title>
-    <ion-card-subtitle>Bienvenido: {{nombre}}</ion-card-subtitle>
-    <!-- Se agrega un ngIf para validar si el usuario esta logueado , el boton sera visible -->
-    <ion-buttons slot="end">
-      <ion-button size="small" (click)="irCerrar()" *ngIf="isLogged">Cerrar Sesión</ion-button>
-    </ion-buttons>
+     <ion-card-subtitle>Bienvenido: <span>{{nombre}}</span></ion-card-subtitle>
   </ion-toolbar>
 </ion-header>

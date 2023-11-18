@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from './header.component';
-import { ProfesoresService } from '../state/profesores.service';
 import { StateService } from '../state/state.service';
-
 
 
 @NgModule({
@@ -16,6 +14,8 @@ import { StateService } from '../state/state.service';
   ],
   exports: [
     HeaderComponent
+  ], providers: [
+    StateService
   ]
 })
 export class HeaderModule { }

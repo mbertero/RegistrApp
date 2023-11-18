@@ -12,6 +12,7 @@ import {  HttpClientModule } from '@angular/common/http';
 import { ProfesoresService } from '../state/profesores.service';
 import { StateService } from '../state/state.service';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,6 +23,6 @@ import { StateService } from '../state/state.service';
     HttpClientModule
   ],
   declarations: [PerfilPage],
-  providers: [ ProfesoresService]
+  providers: [  StateService,ProfesoresService]
 })
 export class PerfilPageModule {}

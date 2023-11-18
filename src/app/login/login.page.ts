@@ -75,6 +75,7 @@ export class LoginPage implements OnInit {
     this.stateService.setNombre = nombre;
     this.router.navigate(['home']);
     console.log('Entre a login correctamente')
+    console.log('login '+ nombre)
 
   }
 

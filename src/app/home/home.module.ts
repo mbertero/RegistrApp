@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { HeaderModule } from '../header/header.module';
-import { ProfesoresService } from '../state/profesores.service';
-import {  HttpClientModule } from '@angular/common/http';
 import { StateService } from '../state/state.service';
-import { LoginService } from '../login/login.service';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 @NgModule({
@@ -21,8 +21,7 @@ import { LoginService } from '../login/login.service';
     HeaderModule,
     HttpClientModule
   ],
-  declarations: [HomePage],
-  providers: [StateService]
+  declarations: [HomePage]
 
 })
 export class HomePageModule {}

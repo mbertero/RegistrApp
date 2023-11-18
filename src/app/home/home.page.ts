@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfesoresService } from '../state/profesores.service';
+
 import { Router } from '@angular/router';
 import { StateService } from '../state/state.service';
 
@@ -11,8 +11,7 @@ import { StateService } from '../state/state.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
-  public profesores: any;
-  nombre: string = '';
+
 
   constructor( private router: Router,
     private stateService : StateService) {}
@@ -20,7 +19,7 @@ export class HomePage implements OnInit{
   ngOnInit() {
     this.stateService.setTitulo = 'Home'
     console.log('Entre a home correctamente')
-
+   
 
     }
   irAAsistencia() {

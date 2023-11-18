@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,19 +21,21 @@ export class StateService {
     
   }
 
-  get getNombre(){
-    return this.nombre.asObservable();
-  }
 
   set setTitulo(titulo:string){
     this.titulo.next(titulo);
     console.log('Estoy en state titulo' + titulo)
-    console.log(titulo)
+
   }
+  get getNombre(){
+    return this.nombre.asObservable();
+  }
+
 
   set setNombre(nombre:string){
       this.nombre.next(nombre);
       console.log('Estoy en state nombre'+ nombre)
 
   }
+  
 }

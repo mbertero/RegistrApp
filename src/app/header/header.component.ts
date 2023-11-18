@@ -14,10 +14,10 @@ export class HeaderComponent implements OnInit {
   nombre: string = '';
   isLogged: boolean = false;
   esVisible: boolean = false;
+  show : boolean = false;
 
-  constructor(private stateService: StateService, private loginService: LoginService, private router: Router) {
-  
-  }
+  constructor(private stateService: StateService, 
+    private loginService: LoginService, private router: Router) {  }
 
   ngOnInit() {
     this.stateService.getTitulo.subscribe((titulo) => {
@@ -30,12 +30,18 @@ export class HeaderComponent implements OnInit {
       } else {
         this.esVisible = false;
       }
+      
+      if (titulo == 'Login' || titulo == 'Home') {
+        this.show = true;
+      } else {
+        this.show = false;
+      }
      
     });
   
     this.stateService.getNombre.subscribe((nombre) => {
       this.nombre = nombre;
-      console.log('Header'+ nombre);
+      console.log('Header: '+ nombre);
     });
   
     this.loginService.isLogged$.subscribe((isLogged: boolean) => {
@@ -43,7 +49,7 @@ export class HeaderComponent implements OnInit {
     });
   }
   irCerrar() {
-    // this.stateService.setTitulo = 'Login';
+    this.stateService.setTitulo = 'Login';
     this.router.navigate(['/login']);
   }
 

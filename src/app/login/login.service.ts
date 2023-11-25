@@ -21,5 +21,9 @@ export class LoginService {
     this.isLoggedSubject.next(value);
   }
 
+  logout(): void {
+    
+    this.isLoggedSubject.next(false);
+  }
 
 }

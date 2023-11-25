@@ -18,11 +18,13 @@ export class LoginPage implements OnInit {
 
   formIngresarUsuario: FormGroup; //Declarando formulario reactivo
   nombre:string = '';
+  password: string | undefined;
 
   usuario1: Usuario = {
     nombre: 'Jose',
     password: '1234'
   }
+  
 
 
   constructor(
@@ -76,6 +78,7 @@ export class LoginPage implements OnInit {
     this.router.navigate(['home']);
     console.log('Entre a login correctamente')
     console.log('login '+ nombre)
+    this.clearFields();
 
   }
 
@@ -87,5 +90,9 @@ export class LoginPage implements OnInit {
 
   recuperarUsuario(){
 
+  }
+  private clearFields(): void {
+    this.nombre = '';
+    this.password = '';
   }
 }

@@ -48,9 +48,20 @@ export class HeaderComponent implements OnInit {
       this.isLogged = isLogged;
     });
   }
+
+
+ 
   irCerrar() {
-    this.stateService.setTitulo = 'Login';
+    this.stateService.setNombre = 'invitado'
+    this.clearFields();
+    this.loginService.logout();
     this.router.navigate(['/login']);
+  }
+
+  private clearFields(): void {
+
+    this.nombre = '';
+
   }
 
   retroceder(){

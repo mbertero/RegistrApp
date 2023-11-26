@@ -53,16 +53,12 @@ export class HeaderComponent implements OnInit {
  
   irCerrar() {
     this.stateService.setNombre = 'invitado'
-    this.clearFields();
+    this.stateService.setTitulo = 'Login'
     this.loginService.logout();
     this.router.navigate(['/login']);
   }
 
-  private clearFields(): void {
 
-    this.nombre = '';
-
-  }
 
   retroceder(){
    

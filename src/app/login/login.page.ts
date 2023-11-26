@@ -91,8 +91,8 @@ export class LoginPage implements OnInit {
   recuperarUsuario(){
 
   }
-  private clearFields(): void {
-    this.nombre = '';
-    this.password = '';
+  clearFields() {
+   
+    this.formIngresarUsuario.reset();
   }
 }

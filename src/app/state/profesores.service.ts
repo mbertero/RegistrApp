@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ProfesoresService {
 
-    getProfesor(perfilId: any) {
-    throw new Error('Metodo ni implementado');
-  }
+ 
 
   private BASE_URL = 'https://dummyjson.com'
 

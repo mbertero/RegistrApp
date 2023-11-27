@@ -1,16 +1,21 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, async } from '@angular/core/testing';
 
 import { LoginService } from './login.service';
+import { LoginPage } from './login.page';
 
 describe('LoginService', () => {
-  let service: LoginService;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(LoginService);
+   beforeEach(async() => {
+   await TestBed.configureTestingModule({
+    declarations : [LoginPage],
+    providers : [LoginService],
+   }).compileComponents();
+    
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    const fixture = TestBed.createComponent(LoginPage);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
   });
+ 
 });

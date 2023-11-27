@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
       console.log('Header' + titulo)
  
   
-      if (titulo == 'Profesores' || titulo == 'Descripción') {
+      if (titulo == 'Profesores' || titulo == 'Descripción' || titulo =='Asistencia') {
         this.esVisible = true;
       } else {
         this.esVisible = false;

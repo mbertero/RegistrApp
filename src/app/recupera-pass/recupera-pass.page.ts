@@ -24,6 +24,7 @@ export class RecuperaPassPage implements OnInit {
   }
 
   irARecuperar() {
+
     const usuario = {
       nombre: this.formularioRecuperacion.get('nombre')?.value,
     }

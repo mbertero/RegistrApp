@@ -14,7 +14,7 @@ export class PerfilPage implements OnInit {
   public profesor: any;
 
 
-  constructor(
+  constructor(private http: HttpClient,
     private activateRoute: ActivatedRoute,
     private profesoresService: ProfesoresService,
     private stateService : StateService

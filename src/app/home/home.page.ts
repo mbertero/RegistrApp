@@ -11,8 +11,6 @@ import { StateService } from '../state/state.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
-
-
   constructor( private router: Router,
     private stateService : StateService) {}
 
@@ -23,8 +21,7 @@ export class HomePage implements OnInit{
 
     }
   irAAsistencia() {
-    
-    alert('Aun no se encuentra disponible. Vaya a botón de profesor :D');
+    this.router.navigate(['asistencia']);
   }
 
 
@@ -33,11 +30,11 @@ export class HomePage implements OnInit{
   }
   irAInforme() {
     
-    alert('Aun no se encuentra disponible. Vaya a botón de profesor :D');
+    alert('Aun no se encuentra disponible. Vaya a botón de asistencia o profesor');
   }
   irAAjustes() {
     
-    alert('Aun no se encuentra disponible. Vaya a botón de profesor :D');
+    alert('Aun no se encuentra disponible. Vaya a botón de asistencia o profesor');
   }
   
  

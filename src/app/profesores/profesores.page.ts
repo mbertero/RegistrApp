@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProfesoresService } from '../state/profesores.service';
 
 import { StateService } from '../state/state.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-profesores',
@@ -12,7 +13,8 @@ export class ProfesoresPage implements OnInit {
   public profesores: any;
 
   constructor(private profesoresService: ProfesoresService,
-     private stateService : StateService ) {}
+     private stateService : StateService,
+     private http : HttpClient ) {}
 
 
   ngOnInit() {

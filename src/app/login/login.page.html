@@ -9,7 +9,7 @@
             id="nombre"
             formControlName="nombre"
             placeholder="Ingrese nombre de usuario"
-            type="text"
+            type="text" #nombre
             label-placement="floating"
             fill="outline"
           ></ion-input>
@@ -21,7 +21,7 @@
       
       formControlName="password"
       placeholder="Ingrese Contraseña"
-      type="password"
+      type="password" #password
       label-placement="floating"
       fill="outline"
     ></ion-input>
@@ -29,7 +29,7 @@
   </ion-item>
     <br />
     <div class="button-container">
-    <ion-button color="primary" (click)="ingresarUsuario()" type="submit"
+    <ion-button color="primary"id="btnIngresar" (click)="ingresarUsuario()" type="submit"
       >INGRESAR</ion-button
     >
     <ion-button color="secondary" (click)="irARecuperar()"

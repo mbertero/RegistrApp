@@ -33,6 +33,12 @@ const routes: Routes = [
     loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule),
     canActivate: [CanActivateRouteGuard]
   },
+  {
+    path: 'asistencia',
+    loadChildren: () => import('./asistencia/asistencia.module').then( m => m.AsistenciaPageModule),
+    canActivate: [CanActivateRouteGuard]
+  },
+
 ];
 
 @NgModule({

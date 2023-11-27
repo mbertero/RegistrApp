@@ -15,7 +15,7 @@ interface Usuario {
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
+  titulo = 'Login'
   formIngresarUsuario: FormGroup; //Declarando formulario reactivo
   nombre:string = '';
   password: string | undefined;
@@ -46,7 +46,7 @@ export class LoginPage implements OnInit {
    }
 
   ngOnInit() {
-     
+     this.stateService.setTitulo= 'Login';
   }
 
   ingresarUsuario(){

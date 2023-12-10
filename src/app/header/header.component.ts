@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { StateService } from '../state/state.service';
 import { LoginService } from '../login/login.service';
-import {  Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+
+
 
 
 @Component({
@@ -9,21 +11,24 @@ import {  Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
   titulo: string = '';
   nombre: string = '';
   isLogged: boolean = false;
   esVisible: boolean = false;
   show : boolean = false;
+  private tituloSubscription: Subscription = new Subscription;
+  private nombreSubscription: Subscription = new Subscription;
 
   constructor(private stateService: StateService, 
-    private loginService: LoginService, private router: Router) {  }
-
+    private loginService: LoginService ) { 
+     
+     }
+   
   ngOnInit() {
-    this.stateService.getTitulo.subscribe((titulo) => {
+    this.tituloSubscription = this.stateService.getTitulo.subscribe((titulo) => {
       this.titulo = titulo;
-      console.log('Header' + titulo)
- 
+      console.log('Título actualizado en HeaderComponent:', titulo);
   
       if (titulo == 'Profesores' || titulo == 'Descripción' || titulo =='Asistencia') {
         this.esVisible = true;
@@ -39,7 +44,7 @@ export class HeaderComponent implements OnInit {
      
     });
   
-    this.stateService.getNombre.subscribe((nombre) => {
+    this.nombreSubscription =  this.stateService.getNombre.subscribe((nombre) => {
       this.nombre = nombre;
       console.log('Header: '+ nombre);
     });
@@ -52,17 +57,19 @@ export class HeaderComponent implements OnInit {
 
  
   irCerrar() {
-    this.stateService.setNombre = 'invitado'
-    this.stateService.setTitulo = 'Login'
-    this.loginService.logout();
-    this.router.navigate(['/login']);
+
+        console.log('Cierre de sesión completado');
+        this.tituloSubscription.unsubscribe();
+        window.location.reload();
+ 
+
   }
-
-
-
   retroceder(){
-   
+    
   }
-
+  ngOnDestroy() {
+    this.tituloSubscription.unsubscribe();
+    this.nombreSubscription .unsubscribe();
+  }
 
 }

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { StateService } from '../state/state.service';
 import { LoginService } from './login.service';
 import { IonicModule } from '@ionic/angular';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('LoginPage', () => {
   let component: LoginPage;
@@ -19,7 +20,7 @@ describe('LoginPage', () => {
         StateService,
         LoginService
       ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(), HttpClientTestingModule]
     }).compileComponents();
   }));
 
@@ -29,11 +30,14 @@ describe('LoginPage', () => {
     fixture.detectChanges();
   });
 
-  it('Debería tener como nombre "Login"', () => {
+  it('should be created', () => {
     const fixture = TestBed.createComponent(LoginPage);
     const app = fixture.componentInstance;
-    expect(app.titulo).toEqual('Login');
+    expect(app).toBeTruthy();
+
   });
+
+
 
 
 });

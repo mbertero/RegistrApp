@@ -15,7 +15,7 @@ interface Usuario {
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  titulo = 'Login'
+
   formIngresarUsuario: FormGroup; //Declarando formulario reactivo
   nombre:string = '';
   password: string | undefined;
@@ -86,11 +86,10 @@ export class LoginPage implements OnInit {
     this.stateService.setNombre = 'invitado'
     this.stateService.setTitulo = 'Recuperar contraseña'
     this.router.navigate(['recupera-pass']);
+    this.clearFields();
   }
 
-  recuperarUsuario(){
 
-  }
   clearFields() {
    
     this.formIngresarUsuario.reset();

@@ -37,7 +37,7 @@ export class RecuperaPassPage implements OnInit {
     const nombre = usuario.nombre;
 
     this.stateService.setNombre = 'invitado'
-    this.stateService.setTitulo = 'Homepage'
+    this.stateService.setTitulo = 'Login'
     this.router.navigate(['login']);
   }
 

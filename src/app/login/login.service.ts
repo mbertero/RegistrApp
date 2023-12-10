@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 
@@ -11,7 +12,7 @@ export class LoginService {
   private isLoggedSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public isLogged$ = this.isLoggedSubject.asObservable();
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getIsLogged(){
     return this.isLoggedSubject.asObservable();
@@ -21,9 +22,9 @@ export class LoginService {
     this.isLoggedSubject.next(value);
   }
 
-  logout(): void {
+  logout() {
+    this.setIsLogged(false);
     
-    this.isLoggedSubject.next(false);
   }
 
   authenticate(username: string, password: string): Observable<boolean> {

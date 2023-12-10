@@ -10,6 +10,8 @@ import { AsistenciaPage } from './asistencia.page';
 import { QRCodeModule } from 'angularx-qrcode';
 import { HeaderModule } from '../header/header.module';
 import { StateService } from '../state/state.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   imports: [QRCodeModule,
@@ -18,8 +20,10 @@ import { StateService } from '../state/state.service';
     IonicModule,
     AsistenciaPageRoutingModule,
     HeaderModule
+
   ],
   declarations: [AsistenciaPage],
   providers: [StateService]
 })
 export class AsistenciaPageModule {}
+

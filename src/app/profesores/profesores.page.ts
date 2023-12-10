@@ -14,7 +14,9 @@ export class ProfesoresPage implements OnInit {
 
   constructor(private profesoresService: ProfesoresService,
      private stateService : StateService,
-     private http : HttpClient ) {}
+     private http : HttpClient ) {
+      
+     }
 
 
   ngOnInit() {

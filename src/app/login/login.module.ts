@@ -22,5 +22,6 @@ import { HeaderModule } from '../header/header.module';
     HeaderModule
   ],
   declarations: [LoginPage]
+
 })
 export class LoginPageModule {}

@@ -37,12 +37,13 @@ ion-avatar{
   font-weight: bold;
 }
 
-.custom-card {
-  max-width: 200px; /* Ajusta el ancho máximo según tus preferencias */
-  margin: 10px; /* Espacio entre las tarjetas */
+
+.tarjetas {
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-.custom-card img {
-  max-width: 100%; /* Hace que las imágenes se ajusten al ancho de la tarjeta */
-  height: auto; /* Mantiene la relación de aspecto de las imágenes */
+.tarjetas:hover {
+  background-color: #A1A1A1; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
 }

@@ -34,7 +34,7 @@ export class StateService {
 
   set setNombre(nombre:string){
       this.nombre.next(nombre);
-      console.log('Estoy en state nombre'+ nombre)
+      console.log('Estoy en state nombre '+ nombre)
 
   }
   

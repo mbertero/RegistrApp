@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router } from '@angular/router';
+import {  Router } from '@angular/router';
 import { StateService } from '../state/state.service';
+
 
 
 
@@ -12,11 +13,15 @@ import { StateService } from '../state/state.service';
 })
 export class HomePage implements OnInit{
   constructor( private router: Router,
-    private stateService : StateService) {}
+    private stateService : StateService) {
+   
+    }
 
   ngOnInit() {
-    this.stateService.setTitulo = 'Home'
     console.log('Entre a home correctamente')
+    this.stateService.setTitulo = 'Home'
+  
+    
    
 
     }

@@ -21,7 +21,8 @@ const routes: Routes = [
   {
     path: 'profesores',
     loadChildren: () => import('./profesores/profesores.module').then( m => m.ProfesoresPageModule),
-     canActivate: [CanActivateRouteGuard]
+     canActivate: [CanActivateRouteGuard],
+     data: { titulo: 'Profesores' }
    
   },
   {
@@ -36,7 +37,8 @@ const routes: Routes = [
   {
     path: 'asistencia',
     loadChildren: () => import('./asistencia/asistencia.module').then( m => m.AsistenciaPageModule),
-    canActivate: [CanActivateRouteGuard]
+    canActivate: [CanActivateRouteGuard],
+    data: { titulo: 'Asistencia' }
   },
 
 ];

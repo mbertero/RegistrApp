@@ -1,37 +1,58 @@
 <app-header></app-header>
 
 <ion-content class="ion-padding">
-  <!--Formulario reactivo-->
-  <form [formGroup]="formularioRecuperacion">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3" size-lg="4" offset-lg="4">
+        <!-- Formulario reactivo -->
+        <form [formGroup]="formularioRecuperacion">
 
-    <div class="ion-padding">
-      <ion-item>
-        <ion-input class="input"
-           
-            id="nombre"
-            formControlName="nombre"
-            placeholder="Ingrese nombre de usuario"
-            type="text"
-            label-placement="floating"
-            fill="outline"
-          ></ion-input>
-        <ion-icon name="person-outline"></ion-icon>
-      </ion-item>
+          <div class="ion-padding">
+            <ion-item>
+              <ion-input class="input"
+                id="nombre"
+                formControlName="nombre"
+                placeholder="Ingrese nombre de usuario"
+                type="text"
+                label-placement="floating"
+                fill="outline"
+              ></ion-input>
+              <ion-icon name="person-outline"></ion-icon>
+            </ion-item>
 
-   
-    <br />
-
-    <ion-button color="secondary" (click)="irARecuperar()"
-      >RECUPERAR</ion-button    >
-  </div>
-  
-
-
-  </form>
+            <br />
+            <div class="ion-text-center"> <!-- Aplica la clase para centrar -->
+              <ion-button color="secondary" (click)="irARecuperar()">RECUPERAR</ion-button>
+            </div>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <ion-title class="ion-text-center">Desarrollo de Aplicaciones Móviles</ion-title>
+  <ion-toolbar color="dark">
+    
+    <div class="ion-text-center footer-center">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/1067px-Logo_DuocUC.svg.png" class="logo">
+    </div>  
+ <!-- <ion-title class="ion-text-center">RegistrApp</ion-title> -->
+    <div class="social-icons-container ">
+      <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
+      <ion-icon name="logo-instagram" class="social-icon"></ion-icon>
+      <ion-icon name="logo-linkedin" class="social-icon"></ion-icon>
+      <ion-icon name="logo-reddit" class="social-icon"></ion-icon>
+
+    </div>
+    <ul class="footer-menu-container ">
+    <li class="menu-item">Legal</li>
+    <li class="menu-item">Cookies</li>
+    <li class="menu-item">Privacidad</li>
+   
+    </ul>
+    <div class="ion-text-center ">
+      <span class="copyright">&copy;2023, DuocUC Desarrollo de aplicaciones móviles</span>
+    </div>
   </ion-toolbar>
 </ion-footer>

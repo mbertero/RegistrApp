@@ -4,7 +4,7 @@
       <ion-back-button defaultHref="/login"(click)="retroceder()" >
       </ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center" >{{titulo}}</ion-title>
+    <ion-title class="ion-text-center" >{{titulo}}</ion-title><br>
     <ion-card-subtitle  class="ion-text-center" *ngIf="show">Bienvenido: {{nombre}}</ion-card-subtitle>
     <!-- Se agrega un ngIf para validar si el usuario esta logueado , el boton sera visible -->
     <ion-buttons slot="end">

@@ -8,6 +8,8 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { HeaderModule } from '../header/header.module';
+import { FooterComponent } from '../footer/footer.component';
+import { FooterModule } from '../footer/footer.module';
 
 
 
@@ -19,7 +21,8 @@ import { HeaderModule } from '../header/header.module';
     IonicModule,
     LoginPageRoutingModule,
     ReactiveFormsModule,
-    HeaderModule
+    HeaderModule,
+    FooterModule
   ],
   declarations: [LoginPage]
 

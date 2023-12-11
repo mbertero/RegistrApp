@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StateService } from '../state/state.service';
 import { LoginService } from '../login/login.service';
 import { Subscription } from 'rxjs';
+import { AlertController } from '@ionic/angular';
 
 
 
@@ -20,8 +21,9 @@ export class HeaderComponent  {
   private tituloSubscription: Subscription = new Subscription;
   private nombreSubscription: Subscription = new Subscription;
 
+
   constructor(private stateService: StateService, 
-    private loginService: LoginService ) { 
+    private loginService: LoginService, private alertController: AlertController ) { 
      
      }
    
@@ -56,13 +58,31 @@ export class HeaderComponent  {
 
 
  
-  irCerrar() {
-
-        console.log('Cierre de sesión completado');
-        this.tituloSubscription.unsubscribe();
-        window.location.reload();
- 
-
+  async irCerrar() {
+    const alert = await this.alertController.create({
+      header: 'Cerrar sesión',
+      message: '¿Estás seguro de que deseas cerrar sesión?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            // Si el usuario elige cancelar, no haces nada o puedes realizar alguna acción específica
+          },
+        },
+        {
+          text: 'Aceptar',
+          handler: () => {
+            console.log('Cierre de sesión completado');
+            this.tituloSubscription.unsubscribe();
+            window.location.reload();
+          },
+        },
+      ],
+    });
+  
+    await alert.present();
   }
   retroceder(){
     

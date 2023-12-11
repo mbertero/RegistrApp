@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <ion-content
-  ><ion-card>
+  ><ion-card class="">
     <img
       class="centered-image"
       alt="Duoc"
@@ -29,9 +29,9 @@
         <ion-col size="6" size-sm="6" size-md="6" size-lg="3">
           <ion-card class="tarjetas"color="primary" (click)="irAAsistencia()">
             <ion-card-header>
-              <ion-card-title></ion-card-title>
-              <ion-card-subtitle class="ion-text-center"
-                >Asistencia</ion-card-subtitle
+           
+              <ion-card-title class="ion-text-center"
+                >Asistencia</ion-card-title
               >
             </ion-card-header>
 
@@ -41,9 +41,9 @@
         <ion-col size="6" size-sm="6" size-md="6" size-lg="3">
           <ion-card class="tarjetas" (click)="irAProfesor()" color="secondary">
             <ion-card-header>
-              <ion-card-title></ion-card-title>
-              <ion-card-subtitle class="ion-text-center"
-                >Profesores</ion-card-subtitle
+
+              <ion-card-title class="ion-text-center"
+                >Profesores</ion-card-title
               >
             </ion-card-header>
 
@@ -54,9 +54,8 @@
         <ion-col size="6" size-sm="6" size-md="6" size-lg="3">
           <ion-card class="tarjetas" (click)="irAInforme()" color="tertiary">
             <ion-card-header>
-              <ion-card-title></ion-card-title>
-              <ion-card-subtitle class="ion-text-center"
-                >Informe</ion-card-subtitle
+              <ion-card-title class="ion-text-center"
+                >Informe</ion-card-title
               >
             </ion-card-header>
 
@@ -67,9 +66,9 @@
         <ion-col size="6" size-sm="6" size-md="6" size-lg="3">
           <ion-card class="tarjetas" (click)=" irAAjustes()" color="success">
             <ion-card-header>
-              <ion-card-title></ion-card-title>
-              <ion-card-subtitle class="ion-text-center"
-                >Ajustes</ion-card-subtitle
+
+              <ion-card-title class="ion-text-center"
+                >Ajustes</ion-card-title
               >
             </ion-card-header>
 
@@ -78,30 +77,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </div>
+  </div><br><br>
 
-  <ion-footer>
-    <ion-toolbar color="dark">
-      
-      <div class="ion-text-center footer-center">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/1067px-Logo_DuocUC.svg.png" class="logo">
-      </div>  
-   <!-- <ion-title class="ion-text-center">RegistrApp</ion-title> -->
-      <div class="social-icons-container">
-        <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
-        <ion-icon name="logo-instagram" class="social-icon"></ion-icon>
-        <ion-icon name="logo-linkedin" class="social-icon"></ion-icon>
-        <ion-icon name="logo-reddit" class="social-icon"></ion-icon>
-  
-      </div>
-      <ul class="footer-menu-container">
-      <li class="menu-item">Legal</li>
-      <li class="menu-item">Cookies</li>
-      <li class="menu-item">Privacidad</li>
-     
-      </ul>
-      <div class="ion-text-center ">
-        <span class="copyright">&copy;2023, DuocUC Desarrollo de aplicaciones móviles</span>
-      </div>
-    </ion-toolbar>
-  </ion-footer>
+  <app-footer></app-footer>

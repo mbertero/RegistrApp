@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HeaderModule } from '../header/header.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FooterModule } from '../footer/footer.module';
 
 
 
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule,
     HomePageRoutingModule,
     HeaderModule,
+    FooterModule,
     HttpClientModule
   ],
   declarations: [HomePage],

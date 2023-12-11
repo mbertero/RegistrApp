@@ -10,7 +10,7 @@ import { AsistenciaPage } from './asistencia.page';
 import { QRCodeModule } from 'angularx-qrcode';
 import { HeaderModule } from '../header/header.module';
 import { StateService } from '../state/state.service';
-import { HttpClientModule } from '@angular/common/http';
+import { FooterModule } from '../footer/footer.module';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     IonicModule,
     AsistenciaPageRoutingModule,
-    HeaderModule
+    HeaderModule,
+    FooterModule
 
   ],
   declarations: [AsistenciaPage],

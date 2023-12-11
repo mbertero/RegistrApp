@@ -11,6 +11,7 @@ import { HeaderModule } from '../header/header.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfesoresService } from '../state/profesores.service';
 import { StateService } from '../state/state.service';
+import { FooterModule } from '../footer/footer.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { StateService } from '../state/state.service';
     IonicModule,
     HeaderModule,
     HttpClientModule,
+    FooterModule,
     ProfesoresPageRoutingModule,
     
   ],
